@@ -1,0 +1,806 @@
+<!--homepage.html-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <meta charset="UTF-8">
+    <title>Create Shipment</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <style type="text/css">
+     
+     	body{
+     		
+     	}
+     	
+     	
+	.nav li{
+		padding-left: 1%;
+		padding-right: 1%;
+	}
+	.nav li a{
+		font-size: 120%;
+	}
+	
+	.nav li a:hover{
+		color: blue;
+	}
+     	.navbar{
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+     	
+	.homeback h1{
+		color: white;
+		padding-top: 5%;
+		font-size:400%;
+		text-align: center;
+	}
+	.homeback p{
+	color: white;
+	text-align: center;
+	font-size:150%;
+	}
+	.homeback h3{
+	color: white;
+	text-align: center;
+	font-size:200%;
+	}
+	
+	.heading{
+		display: flex;
+	}
+	
+	.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid rgba(19, 102, 209);
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin: 1px 15px 1px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+    background: rgb(223, 226, 230);
+    color: #1f242d;
+    box-shadow: 0 0 20px rgb(223, 226, 230);
+}
+
+
+
+/* KEYFRAME ANIMATION */
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+     100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+     100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+     100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+     100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+     100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-24px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+	
+	
+	
+.end{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	color: white;
+	padding-top: 5%;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 2%;
+}
+
+.end2{
+	width: 30%;
+}
+
+.cp{
+	width: 30%;
+}
+
+.end3{
+	width: 30%;
+}
+
+.endown{
+	justify-content:space-around;
+	align-items: center;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.need img{
+	width:80px;
+	height: 60px;
+	
+}
+.need h5{
+	text-align: center;
+}
+.sss h2{
+	font-size: 300%;
+	font-weight: bold;
+}
+
+.befirst{
+	display: flex;
+	width: 100%;
+}
+ 
+.sss{
+	padding: 5%;
+}
+.endnav a{
+	text-decoration: none;
+	color: white;
+	
+}
+
+
+.mediaend a{
+     display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 2px solid #e9e9e9;
+    border-radius: 50%;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.mediaend a:hover {
+    background: transparent;
+    color: white;
+    box-shadow: 0 0 20px #e9e9e9;
+}
+
+
+	.cont{
+		padding: 5%;
+		padding-left:3%;
+	}
+	.btn{
+		color: white;
+	}
+	.fulfil{
+		
+		text-align: center;
+	}
+
+
+
+
+     	 @media (min-width:1200px){  	
+	.phone{
+		display:none;
+	}
+}
+   
+   .social-media1 a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgb(223, 226, 230);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(223, 226, 230);
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media1 a:hover {
+    background: rgb(223, 226, 230);
+    color: #1f242d;
+    box-shadow: 0 0 20px rgb(223, 226, 230);
+}
+   
+   
+   
+
+@media (max-width:1100px){
+    .comp{
+    	display: none;
+    }
+    
+    
+    
+    
+    .navbar-brand{
+     		font-size: 300%;
+     		font-family: Times New Roman;
+     		font-weight: bolder;
+     		color: rgba(7, 13, 31, 0.914);
+     	}
+     	.nav-link{
+     		font-size:170%;
+     		color: white;
+     	}
+	
+	.nav-item a{
+		font-size: 220%;
+	}
+	.navbar-toggler{
+    background-color:transparentt
+	}
+    
+    .d-block{
+		height:760px;
+		padding-left:5%;
+		padding-right:5%;
+		padding-bottom: 5%;
+	}
+	
+	.offcanvas{
+    text-align: center;
+}
+.offcanvas-body{
+    font-size: 100%;
+    color: white;
+}
+
+.offcanvas-title{
+    color: white;
+    font-size: 120%;
+}
+.offcanvas-body{
+    background-color: rgba(19, 102, 209, 0.455);
+    color: rgb(19, 102, 209);
+    text-align: left;
+}
+.offcanvas-body ul li a{
+    color:  white;;
+    padding: 10%;
+}
+
+.offcanvas-body a{
+    color: rgb(19, 102, 209);
+}
+
+.offcanvas-body ul li a:hover{
+    background-color: white;
+    color: rgb(19, 102, 209);
+    text-align: left;
+    padding: 10%;
+    padding-left: 2%;
+}
+.dropdown-menu{
+	width: 100%;
+	margin:0;
+}
+.dropdown-menu li{
+    background-color: rgba(19, 102, 209, 0.5)
+}
+.dropdown-menu a{
+    font-size: 110%;
+    text-align: left;
+    padding-left: 0;
+    }
+    
+	
+	.navbar a{
+    display: inline-block;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin:2%;
+    margin-top: 0;
+    margin-bottom:0;
+    transition: .3s;
+     opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+	}
+
+
+.navbar a:hover,
+.navbar a.active {
+    color: rgb(255, 255, 255, 0.654);
+	}
+	
+	
+    
+    
+    }
+
+	
+     </style>    
+       
+</head>
+<body>
+
+
+        
+        
+   
+ <div
+ style="background-image:linear-gradient(135deg, rgba(172, 154, 56, 0.9) 10%,rgba(0,0,0,0.5) 
+    25%, rgba(0,23,149,0.8) 60%, rgba(255,0,0,0.5) 60%,rgba(0,23,149,0.9) 80%), 
+    url(images/cus12.jfif);">
+ 
+         
+  <nav class="navbar">
+     <div class="heading" style="padding-left: 5%; padding-right: 1%; margin: 0;
+      width:100%; justify-content: space-between; align-items: center;">
+     
+     	<div style="width: 30%;">
+             <img th:src="@{/images/coulogo.jpeg}"  alt="..." 
+			style="width: 240px; height: 50px; text-align: center;"><br>
+            <a class="navbar-brand" th:text="'Avexpress Global Logistics'"
+            style="font-size: 130%; text-align: center; color: white;">
+            </a>
+      
+       </div>
+       
+       
+       <div style="width: 70%; margin-left: 15%;">
+       
+       <div class="social-media" style="border-bottom: solid white 1px;
+       margin-right: 10%; padding-left: 60%; padding-bottom: 1%;">
+            <a href="#" style="--i:2;"><i class='bx bxl-facebook'></i></a>
+            <a href="#" style="--i:3;"><i class='bx bxl-instagram-alt' ></i></a>
+        	<a href="#" style="--i:4;"><i class='bx bxl-gmail'></i></a>
+            <a href="#" style="--i:5;"><i class='bx bxs-phone' ></i></a>
+        
+        </div>
+       
+       
+       		
+          <ul class="nav" style="width: 90%; margin-left: 0; margin-right: 5%;">
+            <li class="nav-item" style="">
+              <a class="nav-link" th:href="@{|/admin/dashboard|}" th:text="'Home'">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/adminrece?keyword=00000000|}" th:text="'Receipt'">Get A Quote</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admintrack?keyword=00000000|}">Track & Trace</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/logout|}" th:text="'Logout'">Logout</a>
+            </li>
+          </ul>
+      
+      
+      
+      </div>
+      
+   </nav>
+   
+   
+   
+   
+   
+   
+   
+  
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	<div class = "cont">
+		<div class = "row" style="text-align: center; font-size: 300%; color: white; margin-top: 10%;">
+			<h1>APPROVAL BOARD</h1>
+		</div>
+		
+		
+		
+		
+		
+		<div style="margin-left:20%; margin-right: 20%; margin-bottom: 5%;">
+   		 
+   		 <form class="d-flex" role="search" th:action="@{/adminstamem}" name="keyword">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" th:value="${keyword}" required 
+      style="height: 70px; font-size: 200%;"/>
+      <button class="btn btn-primary" type="submit" style="font-size: 200%;">Search</button>
+    </form>
+    
+    <h3 style="color: white; text-align: center; padding-top: 5%;">
+    Input the Subject Of The Request you want </h3>
+   </div>      
+   
+   
+   
+   
+		
+		
+		<div class = "row" style="width: 100%; text-align: center;">
+			<div class = "col-lg-3" style="margin-top: 15%; margin-bottom: 2%; text-align: center; width: 100%;">
+				<a th:href = "@{/member/new}"  style="font-size: 200%;"
+				class = "btn btn-primary btn-sm mb-3">Make A Comment</a>
+				
+			</div>
+		</div>
+		
+   
+		
+		</div>
+   
+   
+        </div>
+        
+        
+        <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
+        	
+        	
+		<table class = "table table-bordered table-striped">
+			<thead class = "thead">
+				<tr>
+				<th scope="col" style="width:10%;">ROLE</th>
+					<th scope="col" style="width:10%;">Subject</th>
+					<th scope="col" style="width:10%;">Date Of Request</th>
+					<th scope="col" style="width:10%;">Full Name</th>
+					<th scope="col" style="width:10%;">Phone Number</th>
+					<th scope="col" style="width:35%;">Request Details</th>
+					<th scope="col" style="width:15%;">Approval Status</th>
+				</tr>
+			</thead>
+    
+  </tbody>
+</table>
+			
+        	
+        	
+        </div>
+ 
+		
+		<div th:each = "member: ${listMembers}" style="margin-left: 5%; margin-right: 5%; margin-top: 1%;">
+		
+		
+		
+		
+		<table class = "table table-bordered table-striped">
+			
+			<tbody>
+				<tr>
+					<td th:text = "${member.str5()}"  style="width:10%;"></td>
+					<td th:text = "${member.rollNo}"  style="width:10%;"></td>
+					<td th:text = "${member.s100}"  style="width:10%;"></td>
+					<td th:text = "${member.s99}"  style="width:10%;"></td>
+					<td th:text = "${member.s98}"  style="width:10%;"></td>
+					<td th:text = "${member.s2}"  style="width:35%;"></td>
+					<td style="width:15%;">
+						<a th:href = "@{/members/edit/{id}(id=${member.id})}" 
+						class = "btn btn-primary">Update Approval</a>
+						
+					</td>
+				</tr>
+			
+			
+				<tr>
+					<td th:text = "${member.str3()}" ></td>
+					<td th:text = "${member.s4}" style="font-weight: bold;" colspan="5"></td>
+				</tr>
+			
+    
+  </tbody>
+</table>
+			
+
+
+    
+ </div>
+ 
+ 
+ 
+ 
+ 
+ <div style="margin-left: 10%; margin-right: 10%; margin-top:6%; margin-bottom: 5%;">
+ 
+ 
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+  
+  
+  
+  
+  
+  <div class="col">
+    <div class="card h-100">
+      <img th:src="@{/images/road1.jfif}" class="card-img-top" alt="..."
+      style="height: 220px;">
+      <div class="card-body" style="padding-top: 5%;
+       padding-left: 7%; padding-right: 10%;">
+        <h5 class="card-title">Road Logistics</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      
+      <a class="nav-link" th:href="@{|/login|}" style="color: blue; font-size: 100%;">
+      Read more ......</a>
+      </div>
+    </div>
+  </div> 
+	 
+	 
+	 
+	 
+	 <div class="col">
+    <div class="card h-100">
+      <img th:src="@{/images/sea1.jfif}" class="card-img-top" alt="..."
+      style="height: 220px;">
+      <div class="card-body" style="padding-top: 5%;
+       padding-left: 7%; padding-right: 10%;">
+        <h5 class="card-title">Sea Logistics</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      
+      <a class="nav-link" th:href="@{|/login|}" style="color: blue; font-size: 100%;">
+      Read more ......</a>
+      </div>
+    </div>
+  </div> 
+	 
+	 
+	 
+	 
+	 
+	 
+	 <div class="col">
+    <div class="card h-100">
+      <img th:src="@{/images/air1.jfif}" class="card-img-top" alt="..."
+      style="height: 220px;">
+      <div class="card-body" style="padding-top: 5%;
+       padding-left: 7%; padding-right: 10%;">
+        <h5 class="card-title">Air Logistics</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      
+      <a class="nav-link" th:href="@{|/login|}" style="color: blue; font-size: 100%;">
+      Read more ......</a>
+      </div>
+    </div>
+  </div>
+</div>  
+	 
+	 
+	 
+</div>	 
+
+
+	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="desk">
+
+	
+	<div style="background-image:url(images/last1.svg);
+    background-size: cover; background-repeat: no-repeat; background-position: center;">
+
+		<div class="end" style="width: 100%; padding: 0;">
+		
+			<div class="end2" style=" width:30%;margin-left: 1.5%;
+			margin-right: 1.5%;padding-left: 3%; padding-right: 3%;">
+				<img th:src="@{/images/coulogo.jpeg}"  alt="..." style="
+				width: 250px; height: 70px; text-align: center;margin-bottom:
+				5%;">
+			
+				<h5 style="line-height: 200%;">
+				Avexpress We provide globally integrated end-to-end solutions
+				 tailored to our customers’ supply chain management needs with
+				  a special commitment to industry specific requirements.</h5>
+			</div>
+			
+			
+			
+			
+			<div class="end3" style="width:35%;margin-left: 1.5%;
+			margin-right: 1.5%; text-align: center;
+		  padding-top: 1.5%; padding-bottom: 3%;">
+			<h3 style=" font-weight: bold; color: white;
+			font-size: 200%; padding-bottom: 5%;padding-top: 5%;">
+			Contact Us</h3>
+			
+			<div class="endown">
+			
+			<div class="mediaend">
+			<a href="#" style="--i:7;"><i class='bx bxs-edit-location' ></i></a>
+			<h5>27 Casut Street, Limburg, Switzerland</h5>
+			</div>
+			
+			<div class="mediaend">
+			<a href="#" style="--i:7;"><i class='bx bxs-phone' ></i></a>
+			<h5>021 860 65 86</h5>
+			</div>
+			
+			</div><br>
+			
+			
+			<div class="mediaend">
+			<a href="#" style="--i:7;"><i class='bx bxl-facebook'></i></a>
+            <a href="#" style="--i:8;"><i class='bx bxl-twitter' ></i></a>
+            <a href="#" style="--i:9;"><i class='bx bxl-instagram-alt' ></i></a>
+			</div>
+			
+			
+		</div>
+		
+		
+		
+		<div class="cp" style="padding-top: 7%;width:25%;margin-left: 5%;
+			margin-right: 1.5%; padding-left: 3%; padding-right: 3%;">	
+			<div class="end1">
+				<h3 style=" font-weight: bold;">Company</h3>
+				
+				<div class="endnav" style="line-height: 300%;">
+				<a  th:href="@{|/|}" th:text="'Home'"></a><br>
+				<a  th:href="@{|/|}" th:text="'About Us'"></a><br>
+				<a  th:href="@{|/|}" th:text="'Contact'"></a><br>
+				<a  th:href="@{|/|}" th:text="'Resources'"></a><br>
+				</div>
+			</div>
+			
+			
+			<div class="end1">
+				<h3 style=" font-weight: bold;">Products</h3>
+				
+				<div class="endnav" style="line-height: 300%;">
+				<a  th:href="@{|/|}" th:text="'Trust'"></a><br>
+				<a  th:href="@{|/|}" th:text="'Goods'"></a><br>
+				<a  th:href="@{|/|}" th:text="'Services'"></a><br>
+				<a  th:href="@{|/|}" th:text="'Safety'"></a><br>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+	</div>		
+	
+			
+			
+			
+			
+	<div class="copy" style="width: 100%; text-align: center;
+	padding-bottom: 1%;">
+				<p style="color:white;">&copy; 2012 
+				<a  th:href="@{|/register_admin|}"
+				style="color: white; text-decoration: none;">Avexpress</a> 
+				Global Logistics. All rights reserved.</p>
+			</div>		
+		
+</div>
+
+
+			
+
+		
+</div>
+
+
+	 
+	 
+	 
+	 
+	 
+</div>
+
+        
+      
+      
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script th:src="@{/js/script.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>       
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+  
+</body>
+</html>
